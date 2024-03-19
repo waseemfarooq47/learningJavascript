@@ -49,6 +49,44 @@ const myFunction = function(){
     // console.log("Hello world");
 }
 
-console.log(typeof myFunction);
+// console.log(typeof myFunction);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+// Stack & Heap Memory
+
+/*
+    => Stacked memory gives the copy of original value. when we make changes we are playing with copy of it actually.
+    example 
+    let firstName="ahmad"
+    let secondName ="nabees"
+
+    let combined = firstName + secondName
+
+    firstName = "waseem"
+    secondName = "farooq"
+
+    let combined2 = firstName + secondName
+
+    console.log(combined);
+    console.log(combined2); 
+
+
+
+    => Heap memory gives the reference of original value when we change the value actual values gets changed.
+    Example 
+    let studentOne={
+    name:"waseem",
+    course: "BCA"
+    }
+    let studentTwo=studentOne
+    studentTwo.course =" MCA"  // here we changed the value actual value is changed.
+
+    console.log("Student 1 course "+studentOne.course);
+    console.log("Student 2 course "+studentTwo.course);
+*/
+
+
+
