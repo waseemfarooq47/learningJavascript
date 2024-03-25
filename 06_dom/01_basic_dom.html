@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Learning</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .bg-black{
+        background-color: #212121;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+</head>
+<body>
+  <div class="bg-black">
+    <h1 class="heading" id="title">
+      DOm Learning on Chai and <span >Code</span>
+    </h1>
+
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <input type="password" name="" id="">
+
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+    </ul>
+  </div>
+
+  <script>
+    const element=document.getElementById("title");
+    //********** get attribute  **********//
+    // element.getAttribute("id")
+    // element.getAttribute("class")
+
+
+    //********** set attribute  **********//
+    // element.setAttribute("id","title testid")
+    // element.setAttribute("class","heading newheading")
+
+    //********** text manipulation **********//
+    // ==> this will give us inner text with html tags elements inside it/
+    //element.innerHTML  
+
+    // ==> this will give us inner text without html tags but if using css some text is hidden it will never show that text/
+    //element.textContent  
+
+    // ==> this will give us inner text without html tags but if using css some text is hidden it will show that text overlaps css/
+    //element.textContent  
+    //use query selector
+
+    /*
+    document.querySelector("ul")
+    const myul = document.querySelector("ul")
+    myul.style.backgroundColor = "aqua"
+    'aqua'
+    myul.style.padd = "aqua"
+    'aqua'
+    myul.style.padding = "0px"
+    '0px'
+    myul.style.margin = "0px"
+    '0px'
+
+    const myli=document.querySelector("li")
+    undefined
+    myli.style.fontSize="30px"
+    '30px'
+    myul.style.backgroundColor = "none"
+    'none'
+    myul.style.backgroundColor = "transparent"
+    'transparent'
+
+    // ****** NODELIST ********
+    const mylist=document.querySelectorAll("li")
+    //NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+
+    mylist.forEach((lis)=>{
+        lis.style.color="orange"
+    })
+
+    // *******HTML Collection we need to covert them into array *******
+    const myclass=document.getElementsByClassName("list-item")
+    //coverting it into array
+    const mycoll=Array.from(myclass) //take in anothr variable
+    mycoll.map((item)=>{
+      return  item.style.color="yellow"
+    })
+    */
+  </script>
+</body>
+</html>
+
