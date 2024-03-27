@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Dom</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+        <ul class="language">
+            
+        </ul>
+
+        <script>
+            function addList(addLanguage){
+                const li =document.createElement('li')
+                li.innerHTML=`${addLanguage}`
+                document.querySelector('.language').appendChild(li)
+                li.style.backgroundColor="green"
+                li.style.padding="15px"
+                li.style.borderRadius="10px"
+                li.style.marginBottom="10px"
+                li.style.listStyle="none"
+                li.style.color="white"
+            }
+
+            // addList("JavaScript")
+            // addList("Java")
+            // addList("C")
+            // addList(".NET")
+            // addList("Swift")
+            // addList("Flutter")
+            // addList("Kotlin")
+
+
+            //  optimized way
+            function optimizedList(optList){
+                const li = document.createElement('li')
+                li.appendChild(document.createTextNode(optList))
+                document.querySelector('.language').appendChild(li)
+            }
+
+            optimizedList("JavaScript")
+            optimizedList("Java")
+            optimizedList("Kotlin")
+            optimizedList("Flutter")
+
+
+            // edit list
+            const list=document.querySelector("li:nth-child(3)")
+            // list.innerHTML="Waseem"
+            const newli=document.createElement('li')
+            newli.innerText="Angular"
+            list.replaceWith(newli)
+
+            // edit with outer
+            const list2=document.querySelector("li:last-child")
+            // console.log(list2)
+            list2.outerHTML="<li>Mojo</li>"
+
+
+            // Delete
+            const list3=document.querySelector("li:nth-child(1)")
+            list3.remove()
+
+        </script>
+</body>
+</html>

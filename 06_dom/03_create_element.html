@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Create Element</title>
+</head>
+<body>
+    <script>
+        function createDiv(color){
+            const div = document.createElement("div")
+            console.log(div)
+            div.className="new-div"
+            div.id=Math.round(Math.random()*10 +1)
+            div.setAttribute("title","heading")
+            // div.innerText="Hello Create DOM"
+            div.style.padding="12px"
+            div.style.backgroundColor=color
+            div.style.color="white"
+            div.style.padding="20px"
+            div.style.borderRadius="20px"
+            div.style.fontSize="20px"
+            div.style.marginTop="25px"
+            const text=document.createTextNode("Hello Create DOM")
+            div.appendChild(text)
+
+            document.body.appendChild(div)
+        }
+
+
+        createDiv("orange")
+        createDiv("pink")
+        createDiv("beige")
+        
+    </script>  
+</body>
+</html>
