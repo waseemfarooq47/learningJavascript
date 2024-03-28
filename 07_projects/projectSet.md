@@ -5,7 +5,7 @@
 
 # Solution code
 
-## project 1 
+## project 1 Tap background color change
 
 ``` Javascript projects
 const buttons = document.querySelectorAll('.button');
@@ -52,7 +52,7 @@ buttons.forEach((items) => {
 
 ```
 
-## Project 2
+## Project 2 BMI Calculator
 
 ``` Javascript
 
@@ -84,5 +84,35 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+
+```
+
+
+## Project 3 digital watch
+
+``` javascript
+
+setInterval(() => {
+  const clock = document.getElementById('clock');
+  const time = new Date();
+
+  const options = {
+    timeZone: 'Asia/Muscat',
+    hour12: true, // Set to false if you want 24-hour format
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  };
+
+  const omanTime = time.toLocaleTimeString('en-US', options);
+  clock.innerHTML = omanTime;
+}, 1000);
+
+// setInterval(() => {
+//   const clock = document.getElementById('clock');
+//   const time = new Date();
+//   const omanTime = time.toLocaleTimeString();
+//   clock.innerHTML = omanTime;
+// }, 1000);
 
 ```
