@@ -207,5 +207,36 @@ function newGame() {
     playGame = true;
   });
 }
+```
+
+## project 5 body color change using set interval
+
+```javascript
+
+const randomColor = function changeBackground() {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+function bodyChange() {
+  const body = document.querySelector('body');
+  body.style.backgroundColor = randomColor();
+}
+
+document.querySelector('#start').addEventListener('click', () => {
+  console.log('start typed');
+  colorInterval = setInterval(bodyChange, 2000);
+});
+
+document.querySelector('#stop').addEventListener('click', () => {
+  console.log('stop typed');
+  clearInterval(colorInterval);
+});
+
+// console.log(randomColor());
 
 ```

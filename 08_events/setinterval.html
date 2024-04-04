@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+
+    <h1>Chai Aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+    <script>
+        var interval;
+        function sayHello(){
+            const p=document.createElement('p')
+            p.innerHTML="Hello Intervel ho Gaya"
+            document.body.appendChild(p)
+        }
+        document.querySelector("#stop").addEventListener("click",()=>{
+            clearInterval(interval)
+            console.log("interval stopped")
+        })
+
+        document.querySelector("#start").addEventListener("click",()=>{
+             interval=setInterval(sayHello,2000)
+             console.log("interval working")
+        })
+    </script>
+</body>
+</html>

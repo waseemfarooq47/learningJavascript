@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+</head>
+<body>
+    <h1 id="chai">Chai And Code</h1>
+    <button>Stop</button>
+
+    <script>
+    //   setTimeout(()=>{
+    //     console.log("Hi, Waseem")
+    //   },2000)
+
+    function sayHello(){
+        document.getElementById("chai").innerHTML+=" By Waseem"
+    }
+
+    const container = setTimeout(sayHello,2000)
+
+    document.querySelector("button").addEventListener("click",()=>{
+            clearTimeout(container)
+            console.log("timeout stopped");
+    })
+    </script>
+</body>
+</html>
