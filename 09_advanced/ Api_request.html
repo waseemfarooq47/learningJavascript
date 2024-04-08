@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request </title>
+</head>
+<body style="background: #212121; color: white">
+    <!-- Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+    
+
+    <script>
+         const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+         const xhr= new XMLHttpRequest()
+         xhr.open('GET',requestUrl)
+         xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                console.log(this.responseText)
+                const data = JSON.parse(this.responseText)
+                console.log(data.avatar_url)
+                const card=document.createElement("div")
+                const inner=document.createElement("div")
+                const headerText= document.createElement("h1")
+                const follower= document.createElement("p")
+                const location= document.createElement("p")
+                card.id="card"
+                card.style.width="300px"
+                card.style.height="450px"
+                card.style.background="white"
+                card.style.borderRadius="15px"
+                card.style.color="black"
+                card.style.overflow="hidden"
+                inner.className="img"
+                inner.style.width="100%"
+                inner.style.height="300px"
+                inner.innerHTML=`<img style="width:100%;height:100%" src=${data.avatar_url}/>`
+                headerText.style.color="green"
+                headerText.style.fontStyle="bold"
+                headerText.innerText= `${data.name}`
+                headerText.style.textAlign="center"
+                follower.style.color="red"
+                follower.style.fontStyle="italic"
+                follower.innerHTML= ` Github Account Followers: <b> ${data.followers} </b>`
+                follower.style.textAlign="center"
+                location.style.color="blue"
+                location.style.fontStyle="bold"
+                location.innerHTML= ` Location: <b> ${data.location} </b>`
+                location.style.textAlign="center"
+                card.appendChild(inner)
+                card.appendChild(headerText)
+                card.appendChild(follower)
+                card.appendChild(location)
+                document.body.appendChild(card)
+                console.log(card)
+
+            }
+         
+         }
+         xhr.send()
+
+
+         
+         
+
+        
+    </script>
+
+</body>
+</html>
