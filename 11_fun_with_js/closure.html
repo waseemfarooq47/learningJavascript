@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body style="background-color: #313131;color:#fff">
+
+    <h1 style="display: flex;justify-content: center;">Lexical Scope & Closure</h1>
+
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    
+    <!-- <script>
+        /* LEXICAL SCOPING :  outer function variables can be accesed by inner functions but outer 
+            function cannot access the child function variables
+            outer function cannot access the inner function variables but inner function can access the parent function variables
+        */
+
+
+        // function init() {
+        //     let name = "Mozilla"; 
+        //         function displayName() {
+        //         console.log(name); 
+        //     }
+        //     displayName();
+        // }
+
+        // init();
+
+
+        function outer(){
+            let friendName= "waseem"
+            let friendName2= "Faheem"
+            console.log(john)
+
+
+
+            function inner(){
+                console.log(friendName)
+                let john= "john doe"
+            }
+
+            function inner2(){
+                console.log(friendName)
+            }
+
+            inner()
+            inner2()
+        }
+
+        outer()
+       
+
+    </script> -->
+
+
+
+    <script>
+    /* Closure : A closure is the combination of a function bundled together (enclosed) with references 
+       to its surrounding state (the lexical environment).
+    */
+
+    // function User(){
+    //     const myNamne="Waseem"
+    //     function showName(){
+    //         console.log(myNamne)
+    //     }
+    //     return showName;
+    // }
+
+    // const myUser = User()
+    // myUser()
+
+
+    function changeBackground(color){
+        return function(){
+            document.body.style.background=`${color}`
+        }
+    }
+
+    document.getElementById("orange").onclick=changeBackground('orange')
+    document.getElementById("green").onclick=changeBackground('green')
+
+    </script>
+</body>
+</html>
